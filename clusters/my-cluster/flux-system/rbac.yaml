@@ -22,6 +22,9 @@ subjects:
 - kind: ServiceAccount
   name: kyverno-service-account
   namespace: kyverno
+- kind: ServiceAccount
+  name: flagger-prometheus
+  namespace: istio-system
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
