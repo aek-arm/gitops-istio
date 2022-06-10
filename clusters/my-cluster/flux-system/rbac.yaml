@@ -25,6 +25,27 @@ subjects:
 - kind: ServiceAccount
   name: flagger-prometheus
   namespace: istio-system
+- kind: ServiceAccount
+  name: flagger-prometheus
+  namespace: istio-system
+- kind: ServiceAccount
+  name: flagger-prometheus
+  namespace: istio-system
+- kind: ServiceAccount
+  name: flagger-prometheus
+  namespace: istio-system
+- kind: ServiceAccount
+  name: flagger
+  namespace: istio-system
+- kind: ServiceAccount
+  name: istio-reader-service-account
+  namespace: istio-system
+- kind: ServiceAccount
+  name: istiod-service-account
+  namespace: istio-system
+- kind: ServiceAccount
+  name: istiod
+  namespace: istio-system
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
