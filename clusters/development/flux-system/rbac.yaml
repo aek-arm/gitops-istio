@@ -23,18 +23,6 @@ subjects:
   name: kyverno-service-account
   namespace: kyverno
 - kind: ServiceAccount
-  name: flagger-prometheus
-  namespace: istio-system
-- kind: ServiceAccount
-  name: flagger-prometheus
-  namespace: istio-system
-- kind: ServiceAccount
-  name: flagger-prometheus
-  namespace: istio-system
-- kind: ServiceAccount
-  name: flagger-prometheus
-  namespace: istio-system
-- kind: ServiceAccount
   name: flagger
   namespace: istio-system
 - kind: ServiceAccount
