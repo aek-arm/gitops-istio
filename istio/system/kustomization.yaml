@@ -4,4 +4,4 @@ resources:
   - namespace.yaml
   - istio-psp.yaml
   - istio.yaml
-  - flagger.yaml
+#  - flagger.yaml

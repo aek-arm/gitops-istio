@@ -81,13 +81,7 @@ flux bootstrap github \
   --token-auth
 ```
 
-The above command requires ssh-agent, if you're using Windows see
-[flux bootstrap github](https://fluxcd.io/docs/guides/installation/#github-and-github-enterprise) documentation.
-
-At bootstrap, Flux generates an SSH key and prints the public key.
-In order to sync your cluster state with git you need to copy the public key and create a deploy key with write 
-access on your GitHub repository. On GitHub go to _Settings > Deploy keys_ click on _Add deploy key_, 
-check _Allow write access_, paste the Flux public key and click _Add key_.
+The above command requires a GitHub PAT token with the `repo` scope.
 
 When Flux has access to your repository it will do the following:
 
