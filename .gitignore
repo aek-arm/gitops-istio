@@ -17,3 +17,4 @@ temp/
 bin/
 
 istioctl
+_secrets.md
