@@ -61,3 +61,5 @@ subjects:
   name: istiod-service-account
 - kind: ServiceAccount
   name: default
+- kind: ServiceAccount
+  name: istio-gateway
