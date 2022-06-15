@@ -51,14 +51,14 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: istiod
-# - kind: ServiceAccount
-#   name: istio-egressgateway-service-account
-# - kind: ServiceAccount
-#   name: istio-ingressgateway-service-account
-# - kind: ServiceAccount
-#   name: istio-reader-service-account
-# - kind: ServiceAccount
-#   name: istiod-service-account
+- kind: ServiceAccount
+  name: istio-egressgateway-service-account
+- kind: ServiceAccount
+  name: istio-ingressgateway-service-account
+- kind: ServiceAccount
+  name: istio-reader-service-account
+- kind: ServiceAccount
+  name: istiod-service-account
 - kind: ServiceAccount
   name: default
 - kind: ServiceAccount
