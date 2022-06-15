@@ -65,3 +65,5 @@ subjects:
   name: istio-gateway
 - kind: ServiceAccount
   name: flagger-prometheus
+- kind: ServiceAccount
+  name: istio-cni
