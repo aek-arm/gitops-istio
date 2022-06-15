@@ -1,0 +1,63 @@
+apiVersion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: istio-privileged
+spec:
+  privileged: true
+  allowedCapabilities:
+    - '*'
+  volumes:
+    - '*'
+  hostNetwork: true
+  hostPorts:
+    - min: 0
+      max: 65535
+  hostPID: true
+  hostIPC: true
+  seLinux:
+    rule: RunAsAny
+  runAsUser:
+    rule: RunAsAny
+  supplementalGroups:
+    rule: RunAsAny
+  fsGroup:
+    rule: RunAsAny
+  allowPrivilegeEscalation: true
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: privileged-role
+  namespace: istio-system
+rules:
+  - apiGroups:
+      - "extensions"
+    resources:
+      - podsecuritypolicies
+    resourceNames:
+      - istio-privileged
+    verbs:
+      - use
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: istio-privileged-rb
+  namespace: istio-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: privileged-role
+subjects:
+- kind: ServiceAccount
+  name: istiod
+- kind: ServiceAccount
+  name: istio-egressgateway-service-account
+- kind: ServiceAccount
+  name: istio-ingressgateway-service-account
+- kind: ServiceAccount
+  name: istio-reader-service-account
+- kind: ServiceAccount
+  name: istiod-service-account
+- kind: ServiceAccount
+  name: default

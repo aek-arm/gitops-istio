@@ -52,7 +52,7 @@ kind: ClusterRole
 metadata:
   name: cdm::tenant-full-access
 rules:
-- apiGroups: ["", "extensions", "apps", "services", "configmaps", "secrets", "rbac.authorization.k8s.io"]
+- apiGroups: ["*"]
   resources: ["deployments", "replicasets", "pods", "services", "ingresses"]
   verbs: ["get", "list", "watch", "create", "update", "patch", "delete"] # You can also use ["*"]
 - apiGroups: ["extensions"]

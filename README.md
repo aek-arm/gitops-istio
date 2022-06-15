@@ -69,14 +69,16 @@ and configure it to manage itself from a Git repository.
 If the Flux components are present on the cluster,
 the bootstrap command will perform an upgrade if needed.
 
-Bootstrap Flux by specifying your GitHub repository fork URL:
+Bootstrap Flux by specifying our CDM GitHub repository fork URL:
 
 ```bash
-flux bootstrap git \
-  --author-email=<YOUR-EMAIL> \
-  --url=ssh://git@github.com/<YOUR-USERNAME>/gitops-istio \
+flux bootstrap github \
+  --context=cluster-admin-dev-cloud \
+  --owner=aek-arm  \
+  --repository=gitops-istio \
   --branch=main \
-  --path=clusters/my-cluster
+  --path=clusters\/development \
+  --token-auth
 ```
 
 The above command requires ssh-agent, if you're using Windows see
@@ -103,7 +105,7 @@ For the applications pods to be injected with Istio sidecar,
 the Istio control plane must be up and running before the apps.
 
 With Flux v2 you can specify the execution order by defining dependencies between objects.
-For example, in [clusters/my-cluster/apps.yaml](https://github.com/stefanprodan/gitops-istio/blob/main/clusters/my-cluster/apps.yaml)
+For example, in [clusters/development/apps.yaml](https://github.com/stefanprodan/gitops-istio/blob/main/clusters/development/apps.yaml)
 we tell Flux that the `apps` reconciliation depends on the `istio-system` one:
 
 ```yaml
