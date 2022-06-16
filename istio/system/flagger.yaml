@@ -28,7 +28,13 @@ spec:
   values:
     meshProvider: istio
     prometheus:
-      install: true
+      install: false
+    msteams:
+      url: https://cdmsmisch.webhook.office.com/webhookb2/1e55a9d7-c21a-4dc1-b45a-12d95321c129@69be409d-5f67-4e5e-93c0-45a6600fde89/IncomingWebhook/39f273df556f4fe2861f2da692ca6cbf/5a7e750e-493f-495d-bc67-abbb3a9a95a8
+    serviceAccount:
+      create: true
+      name: "flagger"
+
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
