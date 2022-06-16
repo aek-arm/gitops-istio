@@ -1,6 +1,9 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
+  namespace: flux-system
+  labels:
+    app.kubernetes.io/part-of: istio
   name: prometheus-community
 spec:
   interval: 120m
